@@ -7,4 +7,8 @@ import org.springframework.data.annotation.Id;
 public class Cuenta {
     @Id
     private Integer id;
+    private Integer idUsuario;
+    private String numero;
+    private String tipo;
+    private Double montoInicial;
 }

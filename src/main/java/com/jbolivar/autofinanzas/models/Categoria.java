@@ -4,9 +4,9 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 @Data
-public class Presupuesto {
+public class Categoria {
     @Id
     private Integer id;
+    private String nombre;
     private String descripcion;
-    private Boolean activo;
 }

@@ -7,8 +7,8 @@ import org.springframework.data.annotation.Id;
 public class Transaccion {
     @Id
     private Integer id;
-    private Integer idPresupuesto;
     private Integer idCuenta;
+    private Integer idCategoria;
     private String fecha;
     private String descripcion;
     private Double monto;
