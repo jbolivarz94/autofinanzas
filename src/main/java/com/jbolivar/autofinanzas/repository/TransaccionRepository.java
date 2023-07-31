@@ -10,7 +10,11 @@ import java.sql.Date;
 @Repository
 public interface TransaccionRepository extends R2dbcRepository<Transaccion, Integer>{
 
-    Flux<Transaccion> findByDescripcionContaining(String title);
+    Flux<Transaccion> findByDescripcionContaining(String descripcion);
 
-    Flux<Transaccion> findByDescripcionContainingAndFecha(String title, Date fecha);
+    Flux<Transaccion> findByDescripcionContainingAndFecha(String descripcion, Date fecha);
+
+    Flux<Transaccion> findByIdCuenta(Integer idCuenta);
+
+    Flux<Transaccion> findByIdCuentaAndFecha(Integer idCuenta, Date fecha);
 }
