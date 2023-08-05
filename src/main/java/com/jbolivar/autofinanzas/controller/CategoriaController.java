@@ -36,7 +36,7 @@ public class CategoriaController {
     }
 
     @DeleteMapping("/{id}")
-    public Mono<Void> deleteCategoria(@PathVariable Integer id){
+    public Mono<Categoria> deleteCategoria(@PathVariable Integer id){
         return categoriaService.deleteById(id);
     }
 }

@@ -12,4 +12,16 @@ public class Usuario {
     private String apellido;
     private String email;
     private String telefono;
+
+    public Usuario() {
+    }
+
+    public Usuario(Integer id, String identificacion, String nombre, String apellido, String email, String telefono) {
+        this.id = id;
+        this.identificacion = identificacion;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.telefono = telefono;
+    }
 }

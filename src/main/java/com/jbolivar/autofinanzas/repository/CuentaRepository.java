@@ -12,4 +12,5 @@ public interface CuentaRepository extends R2dbcRepository<Cuenta,Integer> {
     Flux<Cuenta> findByTipoContaining(String tipo);
     Flux<Cuenta> findByIdUsuario(Integer id);
     Mono<Boolean> existsByNumero(String numero);
+    Mono<Void> deleteByNumero(String numero);
 }

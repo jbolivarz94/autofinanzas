@@ -19,12 +19,12 @@ public class UsuarioController {
         return usuarioService.findAll();
     }
 
-    @GetMapping("/{nombre}")
+    @GetMapping("/nombre/{nombre}")
     public Flux<Usuario> getUsuarioByNombre(@PathVariable String nombre){
         return usuarioService.findByNombre(nombre);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public Mono<Usuario> getUsuarioById(@PathVariable Integer id){
         return usuarioService.findById(id);
     }
@@ -38,7 +38,7 @@ public class UsuarioController {
     public Mono<Usuario> updateUsuario(@RequestBody Usuario usuario){ return usuarioService.save(usuario);}
 
     @DeleteMapping("/{id}")
-    public Mono<Void> deleteUsuarioById(@PathVariable Integer id){
+    public Mono<Usuario> deleteUsuarioById(@PathVariable Integer id){
         return usuarioService.deleteById(id);
     }
 

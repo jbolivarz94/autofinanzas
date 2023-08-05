@@ -22,17 +22,17 @@ public class CuentaController {
         return cuentaService.findAll();
     }
 
-    @GetMapping("/{numero}")
+    @GetMapping("/numero/{numero}")
     public Mono<Cuenta> getCuentaById(@PathVariable String numero){
         return cuentaService.findByNumero(numero);
     }
 
-    @GetMapping("/{idUsuario}")
+    @GetMapping("/id/{idUsuario}")
     public Flux<Cuenta> getCuentaByIdUsuario(@PathVariable Integer idUsuario){
         return cuentaService.findByIdUsuario(idUsuario);
     }
 
-    @GetMapping("/{tipo}")
+    @GetMapping("/tipo/{tipo}")
     public Flux<Cuenta> getCuentaByTipo(@PathVariable String tipo){
         return cuentaService.findByTipo(tipo);
     }
@@ -42,8 +42,8 @@ public class CuentaController {
         return cuentaService.save(cuenta);
     }
 
-    @PutMapping("/")
-    public Mono<Cuenta> updateCuenta(@RequestBody Cuenta cuenta){
-        return cuentaService.save(cuenta);
+    @PutMapping("/{id}")
+    public Mono<Cuenta> updateCuenta(@PathVariable Integer id, @RequestBody Cuenta cuenta){
+        return cuentaService.update( id, cuenta);
     }
 }
